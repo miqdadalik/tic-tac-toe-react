@@ -1,0 +1,31 @@
+@import '../../styles/Colors.scss';
+.resultContainer {
+    display: flex;
+    h3 {
+        font-size: 2em;
+    }
+    .resultBox {
+        border: 3px solid $orang-color;
+        width: 180px;
+        height: 190px;
+        margin: auto;
+        border-radius: 40px;
+        text-align: center;
+        small {
+            display: inline-block;
+            color: $orang-color;
+            margin-top: 20px;
+        }
+        h4 {
+            font-size: 1.5em;
+            padding: 0;
+            margin: 5px;
+        }
+        .cross {
+            top: 5px;
+        }
+        .zero {
+            top: 5px;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+@import '../../styles/Colors.scss';
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 140px;
+    .columnOverlay {
+        height: 140px;
+        border-bottom: 2px dashed $body-font-color;
+        border-right: 2px dashed $body-font-color;
+        opacity: .11
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex: 1;
+        position: relative;
+        &:last-child {
+            .columnOverlay {
+                border-right: none;
+            }
+        }
+        .columnContent {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            font-size: 2em;
+            text-align: center;
+        }
+    }
+    &:last-child {
+        .columnOverlay {
+            border-bottom: none;
+        }
+    }
+}
+.playerWraper {
+    position: absolute;
+    top: 40%;
+    width: 150px;
+    height: 200px;
+    .player {
+        border: 2px solid $black-color;
+        border-radius: 20px;
+        background-color: $player-box-bg;
+        text-align: center;
+        height: 150px;
+        small {
+            color: $orang-color;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        h5 {
+            margin: 0;
+        }
+        .zero {
+            top: 10px;
+            height: 30px;
+            width: 30px;
+        }
+        .cross {
+            width: 40px;
+            height: 40px;
+            top: 10px;
+            margin: auto;
+            &:after {
+                height: 50px;
+                left: 15px;
+            }
+            &:before {
+                height: 50px;
+                left: 15px;
+            }
+        }
+    }
+    .your-turn {
+        text-align: center;
+        color: $orang-color;
+        margin-bottom: 10px;
+    }
+    .dotWrapper {
+        text-align: center;
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: $grey-black;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+            margin-left: 5px;
+            &.dot-1 {
+                background-color: $body-font-color;
+            }
+        }
+    }
+    &.winner {
+        .your-turn {
+            font-size: 1.5em;
+        }
+        .player {
+            border: 2px solid $orang-color;
+        }
+    }
+    &.draw {
+        .your-turn {
+            font-size: 1.5em;
+            color: $body-font-color;
+        }
+        .player {
+            border: 2px solid $orang-color;
+        }
+    }
+    &.left {
+        left: 50px;
+    }
+    &.right {
+        right: 50px;
+    }
+}
